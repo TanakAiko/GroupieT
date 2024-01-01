@@ -76,19 +76,9 @@
         if (!menu.contains(targetElement)) {
             menu.classList.remove('active');
         } else {
-            menu.classList.toggle('active');
+            menu.classList.add('active');
         }
     }
-
-    // Ferme le menu lorsque l'utilisateur clique en dehors du menu
-    document.addEventListener('click', function(event) {
-        var menu = document.querySelector('.menu');
-        var targetElement = event.target;
-
-        if (!menu.contains(targetElement) && !targetElement.closest('.menu-content')) {
-            menu.classList.remove('active');
-        }
-    });
 </script>
 
 <hr class="barre" size="2" width="100%" color="white">
