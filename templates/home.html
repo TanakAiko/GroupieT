@@ -1,0 +1,17 @@
+{{define "members"}}{{end}}
+{{define "creationDate"}}{{end}}
+{{define "firstAlbumDate"}}{{end}}
+{{define "location"}}{{end}}
+
+{{ define "artist" }}
+<div class="All_Artist">
+{{range .Info.Artist}}
+    <div class="artist">
+        <a href="/artist?Id={{.Id}}" class="liens">
+            <img src="{{.Image}}" alt=""  class="img"> <br>
+            <p class="nameArtist">{{.Name}}</p>
+        </a>
+    </div>
+    {{end}}
+</div>
+{{end}}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>GroupieTracker</title>
+    <link rel="stylesheet" href="/main.go">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<header>
+    <a href="/" class="lienTitle">
+        <h1 class="h1">Groupie Tracker</h1>
+    </a>
+
+    <form action="/search" method="post" class="search-bar">
+        <input name="inputSearch" type="search" list="DataList" autocomplete="off" >
+        <button type="submit">Search</button>
+        <datalist id="DataList">    
+            {{range .Info.Artist}}
+                <option value="{{.Name}}">{{.Name}} - artist/band</option>
+                <option value="{{.FirstAlbum}}">{{.FirstAlbum}} - first album date</option>
+                <option value="{{.CreationDate}}">{{.CreationDate}} - creation date</option>
+                    {{range .Members}}
+                        <option value="{{.}}">{{.}} - member</option>
+                    {{end}}
+            {{end}}
+            
+            {{range .Info.Location.Index}}
+                {{range .Locations}}
+                    <option value="{{.}}">{{.}} - location</option>
+                {{end}}
+            {{end}}
+        </datalist>
+    </form>
+
+</header>
+
+<div class="menu" onclick="toggleMenu(event)">
+    <div class="menu-button">Menu</div>
+    <div class="menu-content">
+
+        <form action="/filter" method="post">
+
+            {{template "members" .}}
+            
+            <hr class="barre" size="2" width="100%" color="white">
+            
+            {{template "creationDate" .}}
+            
+            <hr class="barre" size="2" width="100%" color="white">
+            
+            {{template "firstAlbumDate" .}}
+            
+            <hr class="barre" size="2" width="100%" color="white">
+
+            {{template "location" .}}
+
+            <button type="submit">Filter</button>
+        
+        </form>
+
+    </div>
+</div>
+
+<script>
+    function toggleMenu(event) {
+        var menu = document.querySelector('.menu');
+        var targetElement = event.target;
+
+        // Vérifie si l'élément cliqué est à l'intérieur du menu
+        if (!menu.contains(targetElement)) {
+            menu.classList.remove('active');
+        } else {
+            menu.classList.toggle('active');
+        }
+    }
+
+    // Ferme le menu lorsque l'utilisateur clique en dehors du menu
+    document.addEventListener('click', function(event) {
+        var menu = document.querySelector('.menu');
+        var targetElement = event.target;
+
+        if (!menu.contains(targetElement) && !targetElement.closest('.menu-content')) {
+            menu.classList.remove('active');
+        }
+    });
+</script>
+
+<hr class="barre" size="2" width="100%" color="white">
+
+<body class="bodyBase">
+    {{template "artist" .}}
+</body>
+
+</html>

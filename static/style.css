@@ -1,0 +1,233 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.labelSearchB {
+    color: aliceblue;
+}
+
+label,
+button {
+    font-family: 'Philosopher', sans-serif;
+}
+
+.search-bar {
+    text-align: left;
+    margin-top: 55px;
+}
+
+h1 {
+    text-align: left;
+    color: aliceblue;
+    font-size: 3em;
+    font-family: 'Philosopher', sans-serif;
+}
+
+.h1Search {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 2.5em;
+}
+
+.lienTitle {
+    text-decoration: none;
+}
+
+.liens {
+    text-decoration: none;
+}
+
+.liensLink {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-right: -10px;
+}
+
+.img {
+    width: 70%;
+    border: 1px solid;
+    color: #E85A4F;
+}
+
+.img1 {
+    width: 30%;
+    border: 1px solid;
+    color: #E85A4F;
+}
+
+.img2 {
+    width: 45%;
+    border: 1px solid;
+    color: #E85A4F;
+    float: right;
+    /* margin-right: 15%; */
+    margin-left: 28%;
+}
+
+.bloc_name {
+    text-align: center;
+}
+
+.All_Artist {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
+
+.Search_Artist_Result {
+    display: grid;
+    grid-template-columns: repeat(minmax(150px, 1fr));
+}
+
+.bloc_result {
+    display: flex;
+    align-items: center;
+    border: 2px solid aliceblue;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 3%;
+}
+
+.text_search_result {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8%;
+}
+
+.label_search {
+    color: #E85A4F;
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+body {
+    background-color: #202b38;
+}
+
+.barre {
+    margin-left: 0%;
+    margin-right: 0%;
+
+}
+
+.artist {
+    text-align: center;
+    padding-bottom: 20%;
+}
+
+.nameArtist {
+    color: aliceblue;
+}
+
+.moreInfo {
+    text-align: center;
+}
+
+.Titre {
+    font-size: 30px;
+    font-family: 'Philosopher', sans-serif;
+    color: #E85A4F;
+}
+
+.liste {
+    color: aliceblue;
+    text-align: center;
+}
+
+p {
+    font-family: 'Philosopher', sans-serif;
+    color: aliceblue;
+}
+
+.error {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Philosopher', sans-serif;
+
+}
+
+.status {
+    max-width: 100%;
+    font-size: 150px;
+    text-align: center;
+    color: #E85A4F;
+}
+
+.meserr {
+    max-width: 100%;
+    font-size: 45px;
+    text-align: center;
+    color: white;
+}
+
+/* .bouton {
+    margin-left: 45%;
+    margin-right: 55%;
+    margin-top: 5%;
+   size: 50%;
+} */
+.button {
+    margin-left: 46%;
+    margin-right: 55%;
+    margin-top: 5%;
+    width: 90px;
+    height: 50px;
+}
+
+.bloc_image {
+    display: flex;
+}
+
+.anna {
+    text-decoration: none;
+    font-size: 25px;
+    color: #202b38;
+    font-family: 'Philosopher', sans-serif;
+    font-weight: bold;
+}
+
+
+
+
+/* Style de base pour le menu */
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style du bouton du menu */
+.menu-button {
+    padding: 10px;
+    background-color: #E85A4F;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Style du menu déroulant initial (caché) */
+.menu-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Style des éléments du menu déroulant */
+.menu-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Affichage du menu déroulant lorsque le bouton est cliqué */
+.menu.active .menu-content {
+    display: block;
+}

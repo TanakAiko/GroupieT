@@ -1,0 +1,22 @@
+{{define "members"}}{{end}}
+{{define "creationDate"}}{{end}}
+{{define "firstAlbumDate"}}{{end}}
+{{define "location"}}{{end}}
+
+{{ define "artist" }}
+<h1 class="h1Search">Search Result</h1>
+    <div class="Search_Artist_Result">
+    {{range .Search}}
+        <div class="bloc_result">
+            <div class="text_search_result">
+                <p class="label_search">{{.Label}}</p>
+                <p>{{.ToFind}}</p>
+            </div>
+            <a href="/artist?Id={{.Artist.Id}}" class="liensLink">
+                <img src="{{.Artist.Image}}" alt=""  class="img2"> <br>
+                <p class="bloc_name">{{.Artist.Name}}</p>
+            </a>
+        </div>
+    {{end}}
+    </div>
+{{end}}

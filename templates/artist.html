@@ -1,0 +1,43 @@
+{{define "members"}}{{end}}
+{{define "creationDate"}}{{end}}
+{{define "firstAlbumDate"}}{{end}}
+{{define "location"}}{{end}}
+
+{{ define "artist" }}
+<div class="moreInfo">
+    <img src="{{.ArtistSelected.Artist.Image}}" alt="" class="img1">
+    <br>
+
+    <label for="Artist Name" class="Titre">Name</label>
+    <p>{{.ArtistSelected.Artist.Name}}</p><br>
+
+    <label for="Group Members" class="Titre">Members</label>
+    {{range .ArtistSelected.Artist.Members}}
+    <p>{{.}}</p>
+    {{end}}
+    <br>
+
+    <label for="Creation Date" class="Titre">Creation Date</label>
+    <p>{{.ArtistSelected.Artist.CreationDate}}</p><br>
+
+    <label for="First Album" class="Titre">First Album</label>
+    <p>{{.ArtistSelected.Artist.FirstAlbum}}</p><br>
+
+    <label for="Location" class="Titre">Location</label>
+    {{range .ArtistSelected.Locations}}
+    <p>{{.}}</p>
+    {{end}}
+    <br>
+
+    <label for="Relations" class="Titre">Relations</label>
+    {{range $location, $dates := .ArtistSelected.Datelocations}}
+    <p>Location: {{$location}}</p>
+    <div class="liste">
+        {{range $index, $date := $dates}}
+        {{$date}}<br>
+        {{end}}
+    </div>
+    {{end}}
+
+</div>
+{{end}}
